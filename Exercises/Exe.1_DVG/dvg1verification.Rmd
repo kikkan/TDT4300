@@ -1,0 +1,86 @@
+---
+title: "DVG Assignment 1"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Load data
+```{r load, options}
+flights <- read.csv("~/Fysmat/8 Semester V2022/Datavarehus_gruvedrift/Exercises/Exe.1_DVG/data/flights.csv")
+```
+
+# Test data
+```{r test, options}
+# summary(flights)
+# head(flights)
+colnames(flights)
+```
+
+# Report verification
+## Report 1
+
+```{r report1, options}
+airTime <- flights$AIR_TIME
+max(na.omit(airTime))
+```
+
+## Report 2
+```{r report2, options}
+airline <- c("UA", "AA", "US", "F9", "B6", "OO", "AS", "NK", "WN", "DL", "EV", "HA", "MQ", "VX")
+elapsed <- (flights$ELAPSED_TIME)
+ns = rep(0, length(airline))
+elsum <- data.frame(airline = airline, elapsedAvg = rep(0, length(airline)))
+for (i in 1:length(airline)){
+  tempel <- elapsed[flights$AIRLINE==airline[i]]
+  elsum$elapsedAvg[i] = mean(na.omit(tempel))
+}
+elsum
+```
+
+## Report 3
+```{r report3, options}
+length(flights$MONTH[flights$MONTH==2])
+```
+
+## Report 4
+```{r report4, options}
+m = unique(flights$MONTH)
+destination = unique(flights$DESTINATION_AIRPORT)
+af <- data.frame(
+  matrix(0,
+    nrow = length(unique(flights$DESTINATION_AIRPORT)),
+    ncol = 4
+    ))
+rownames(af) <- unique(flights$DESTINATION_AIRPORT)
+colnames(af) <- m
+
+for (i in m){
+  print(i)
+  tm = flights$DESTINATION_AIRPORT[flights$MONTH == i]
+  for (d in destination){
+    af[d,i] = length(tm[tm==d])
+  }
+}
+
+```
+
+```{r cont, options}
+for (i in m){
+  print(max(af[,i]))
+  print(rownames(af)[which.max(af[,i])])
+}
+head(af)
+```
+
+## Report 5
+```{r report5, options}
+m = c("jan", "feb", "mar", "apr")
+md = data.frame(jan = 0, feb = 0, mar = 0, apr = 0)
+for (i in 1:4){
+  md[i] = sum(flights$DISTANCE[flights$MONTH==i])
+}
+md[order(-md)]
+```

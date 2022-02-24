@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<schemaFactory revisionNumber="81">
+    <schemaDefinition name="DVG_exe1_Flights" description="A star schema" group="TDT4300" loadOnStartup="false">
+        <activateIncrementalLoad>false</activateIncrementalLoad>
+        <useUnknownMembersInFacts>true</useUnknownMembersInFacts>
+        <autoCleanUpTableColumns>false</autoCleanUpTableColumns>
+        <useFactPartitioning>false</useFactPartitioning>
+        <memberPropertyConsistencyCheck>ACTIVE</memberPropertyConsistencyCheck>
+        <fileCSV directory="C:/Users/chris/OneDrive/Documents/Fysmat/8 Semester V2022/Datavarehus_gruvedrift/Exercises/Exe.1_DVG/data" checkColumnSize="false" name="Flights" includeSynonyms="false" disableReadOnlyMode="false">
+            <csvDataTable csvseparator="," csvquotechar="&quot;" csvescape="\" csvstrictQuotes="false" csvignoreLeadingWhiteSpace="true" fileEncoding="UTF-8" tableName="flights.csv" rowLimit="-1" id="ad336c96-c0c7-45b2-aa0c-b723b2ee8302">
+                <column name="YEAR" tableType="STRING" type="INTEGER" selected="true" primaryKey="false"/>
+                <column name="MONTH" tableType="STRING" type="INTEGER" selected="true" primaryKey="false"/>
+                <column name="DAY" tableType="STRING" type="INTEGER" selected="true" primaryKey="false"/>
+                <column name="DAY_OF_WEEK" tableType="STRING" type="INTEGER" selected="true" primaryKey="false"/>
+                <column name="AIRLINE" tableType="STRING" type="STRING" selected="true" primaryKey="false"/>
+                <column name="FLIGHT_NUMBER" tableType="STRING" type="STRING" selected="true" primaryKey="false"/>
+                <column name="TAIL_NUMBER" tableType="STRING" type="STRING" selected="true" primaryKey="false"/>
+                <column name="ORIGIN_AIRPORT" tableType="STRING" type="STRING" selected="true" primaryKey="false"/>
+                <column name="DESTINATION_AIRPORT" tableType="STRING" type="STRING" selected="true" primaryKey="false"/>
+                <column name="SCHEDULED_DEPARTURE" tableType="STRING" type="STRING" selected="true" primaryKey="false"/>
+                <column name="DEPARTURE_TIME" tableType="STRING" type="STRING" selected="true" primaryKey="false"/>
+                <column name="DEPARTURE_DELAY" tableType="STRING" type="STRING" selected="true" primaryKey="false"/>
+                <column name="TAXI_OUT" tableType="STRING" type="INTEGER" selected="true" primaryKey="false"/>
+                <column name="WHEELS_OFF" tableType="STRING" type="INTEGER" selected="true" primaryKey="false"/>
+                <column name="SCHEDULED_TIME" tableType="STRING" type="STRING" selected="true" primaryKey="false"/>
+                <column name="ELAPSED_TIME" tableType="STRING" type="INTEGER" selected="true" primaryKey="false"/>
+                <column name="AIR_TIME" tableType="STRING" type="INTEGER" selected="true" primaryKey="false"/>
+                <column name="DISTANCE" tableType="STRING" type="INTEGER" selected="true" primaryKey="false"/>
+                <column name="WHEELS_ON" tableType="STRING" type="STRING" selected="true" primaryKey="false"/>
+                <column name="TAXI_IN" tableType="STRING" type="STRING" selected="true" primaryKey="false"/>
+                <column name="SCHEDULED_ARRIVAL" tableType="STRING" type="STRING" selected="true" primaryKey="false"/>
+                <column name="ARRIVAL_TIME" tableType="STRING" type="STRING" selected="true" primaryKey="false"/>
+                <column name="ARRIVAL_DELAY" tableType="STRING" type="STRING" selected="true" primaryKey="false"/>
+                <column name="DIVERTED" tableType="STRING" type="STRING" selected="true" primaryKey="false"/>
+                <column name="CANCELLED" tableType="STRING" type="STRING" selected="true" primaryKey="false"/>
+                <column name="CANCELLATION_REASON" tableType="STRING" type="STRING" selected="true" primaryKey="false"/>
+                <column name="AIR_SYSTEM_DELAY" tableType="STRING" type="STRING" selected="true" primaryKey="false"/>
+                <column name="SECURITY_DELAY" tableType="STRING" type="STRING" selected="true" primaryKey="false"/>
+                <column name="AIRLINE_DELAY" tableType="STRING" type="STRING" selected="true" primaryKey="false"/>
+                <column name="LATE_AIRCRAFT_DELAY" tableType="STRING" type="STRING" selected="true" primaryKey="false"/>
+                <column name="WEATHER_DELAY" tableType="STRING" type="STRING" selected="true" primaryKey="false"/>
+                <column name="DATE" tableType="STRING" type="DATE" selected="true" primaryKey="false"/>
+                <addRowNumber>false</addRowNumber>
+                <stringDateConverter>yyyy/MM/dd</stringDateConverter>
+                <trimStrings>true</trimStrings>
+                <columnSeparator>,</columnSeparator>
+                <commentMarker>#</commentMarker>
+            </csvDataTable>
+        </fileCSV>
+        <fileCSV directory="C:\Users\chris\OneDrive\Documents\Fysmat\8 Semester V2022\Datavarehus_gruvedrift\Exercises\Exe.1_DVG\data" checkColumnSize="false" name="Airports" includeSynonyms="false" disableReadOnlyMode="false">
+            <csvDataTable csvseparator="," csvquotechar="&quot;" csvescape="\" csvstrictQuotes="false" csvignoreLeadingWhiteSpace="true" fileEncoding="UTF-8" tableName="airports.csv" rowLimit="-1" id="a70d345e-5fc8-413e-bad2-72fbb8222fb9">
+                <column name="IATA_CODE" tableType="STRING" type="STRING" selected="true" primaryKey="false"/>
+                <column name="AIRPORT" tableType="STRING" type="STRING" selected="true" primaryKey="false"/>
+                <column name="CITY" tableType="STRING" type="STRING" selected="true" primaryKey="false"/>
+                <column name="STATE" tableType="STRING" type="STRING" selected="true" primaryKey="false"/>
+                <column name="COUNTRY" tableType="STRING" type="STRING" selected="true" primaryKey="false"/>
+                <column name="LATITUDE" tableType="STRING" type="STRING" selected="true" primaryKey="false"/>
+                <column name="LONGITUDE" tableType="STRING" type="STRING" selected="true" primaryKey="false"/>
+                <addRowNumber>false</addRowNumber>
+                <trimStrings>true</trimStrings>
+                <columnSeparator>,</columnSeparator>
+                <commentMarker>#</commentMarker>
+            </csvDataTable>
+        </fileCSV>
+        <fileCSV directory="C:\Users\chris\OneDrive\Documents\Fysmat\8 Semester V2022\Datavarehus_gruvedrift\Exercises\Exe.1_DVG\data" checkColumnSize="false" name="Airlines" includeSynonyms="false" disableReadOnlyMode="false">
+            <csvDataTable csvseparator="," csvquotechar="&quot;" csvescape="\" csvstrictQuotes="false" csvignoreLeadingWhiteSpace="true" fileEncoding="UTF-8" tableName="airlines.csv" rowLimit="-1" id="5cc342a0-0127-4caa-ba73-3baef8980b2a">
+                <column name="IATA_CODE" tableType="STRING" type="STRING" selected="true" primaryKey="false"/>
+                <column name="AIRLINE" tableType="STRING" type="STRING" selected="true" primaryKey="false"/>
+                <addRowNumber>false</addRowNumber>
+                <trimStrings>true</trimStrings>
+                <columnSeparator>,</columnSeparator>
+                <commentMarker>#</commentMarker>
+            </csvDataTable>
+        </fileCSV>
+        <multiLevelDimension dataTableId="a70d345e-5fc8-413e-bad2-72fbb8222fb9" isTimeDimension="false" isDefaultTimeDimension="false" isIndexingByRange="false" id="cd428f13-0c2d-445f-a4d9-78d9e2dd55f2" name="Airport">
+            <multiLevelHierarchy hasAllLevel="true" allLevelName="All-Level" allMemberName="All" name="Airport" isDefault="true" uuid="38c49a59-a1e8-4587-bcab-e17fc9b16680">
+                <factAggregationType>MEMBER_AND_ANCESTORS</factAggregationType>
+                <level uuid="fd2a6461-38e5-4d23-b4f2-6c78de1954d6" name="Country" nameUnique="false" nameUniqueInParent="false" keyUnique="false" ignoreNameCollision="false">
+                    <nameCol name="COUNTRY"/>
+                    <orderType>NONE</orderType>
+                </level>
+                <level uuid="ef7b1ced-69f9-46b9-afc5-89f5ef23179c" name="State" nameUnique="false" nameUniqueInParent="false" keyUnique="false" ignoreNameCollision="false">
+                    <nameCol name="STATE"/>
+                    <orderType>NONE</orderType>
+                </level>
+                <level uuid="250493e9-10c0-4b4a-8666-4effca2b6e8c" name="City" nameUnique="false" nameUniqueInParent="false" keyUnique="false" ignoreNameCollision="false">
+                    <nameCol name="CITY"/>
+                    <orderType>NONE</orderType>
+                </level>
+                <level uuid="b0f3047e-c4e5-4265-b580-f9820893e0c8" name="Airport" nameUnique="false" nameUniqueInParent="false" keyUnique="false" ignoreNameCollision="false">
+                    <nameCol name="AIRPORT"/>
+                    <orderType>NONE</orderType>
+                </level>
+                <level uuid="beee4b13-720f-4c92-9ad8-29daced5b0f8" name="AirportIATA" nameUnique="true" nameUniqueInParent="false" keyUnique="true" ignoreNameCollision="false">
+                    <nameCol name="IATA_CODE"/>
+                    <orderType>NONE</orderType>
+                </level>
+            </multiLevelHierarchy>
+        </multiLevelDimension>
+        <multiLevelDimension dataTableId="5cc342a0-0127-4caa-ba73-3baef8980b2a" isTimeDimension="false" isDefaultTimeDimension="false" isIndexingByRange="false" id="7e08bd00-42f4-4ecc-b158-5c6483c91906" name="Airline">
+            <multiLevelHierarchy hasAllLevel="true" allLevelName="All-Level" allMemberName="All" name="Airline" isDefault="true" uuid="c0670d1b-3e9b-447a-b1cd-18c098003dca">
+                <factAggregationType>MEMBER_AND_ANCESTORS</factAggregationType>
+                <level uuid="09814323-6b7f-4e52-a3a5-1383c8b8fd87" name="IATA" nameUnique="false" nameUniqueInParent="false" keyUnique="false" ignoreNameCollision="false">
+                    <nameCol name="IATA_CODE"/>
+                    <orderType>NONE</orderType>
+                </level>
+                <level uuid="b29403e9-3b87-40ef-abf3-effdadd1a8e3" name="Airline Name" nameUnique="true" nameUniqueInParent="false" keyUnique="true" ignoreNameCollision="false">
+                    <column name="IATA_CODE"/>
+                    <nameCol name="AIRLINE"/>
+                    <orderType>NONE</orderType>
+                </level>
+            </multiLevelHierarchy>
+        </multiLevelDimension>
+        <timeWizardDimension isDefaultTimeDimension="true" isIndexingByRange="true" dataTableId="ad336c96-c0c7-45b2-aa0c-b723b2ee8302" id="ea825b07-38c2-4176-b620-b9eb3ff319ea" name="Time">
+            <timeHierarchy hasAllLevel="true" allLevelName="" allMemberName="" name="Time" isDefault="true" uuid="18df40ba-34e6-4326-aa1f-30b28c65d203">
+                <level uuid="94eb5b6e-02e9-4901-b228-e2548cad918e" name="Year" type="YEAR">
+                    <useRelativeKey>false</useRelativeKey>
+                </level>
+                <level uuid="a5605db3-9bf9-4fc8-9cdd-0cd1a7c343e8" name="Quarter" type="QUARTER">
+                    <useRelativeKey>false</useRelativeKey>
+                </level>
+                <level uuid="e7e688d7-7bf4-4bc7-aeef-810b3549480a" name="Month" type="MONTH">
+                    <useRelativeKey>false</useRelativeKey>
+                </level>
+                <level uuid="7002a903-038a-4de1-ac29-739581518ec8" name="Day" type="DAY">
+                    <useRelativeKey>false</useRelativeKey>
+                </level>
+            </timeHierarchy>
+            <timeWizardColumn name="DATE"/>
+        </timeWizardDimension>
+        <cube id="4de0045e-6ca2-4a40-8ee2-f016d1da2af1" name="Cube">
+            <defaultFacts uuid="a1810f04-ed5a-4fac-b403-501e0434064a" measureGroupName="Flights" description="Flight measures" partitioningType="NONE" newGeneration="true" dataTableId="ad336c96-c0c7-45b2-aa0c-b723b2ee8302" aggregateDataSourceFacts="false" unresolvedRowsBehavior="ERROR">
+                <rowFactAggregationType>ADD_ROW</rowFactAggregationType>
+                <measure uuid="ed01c3ec-3f65-427e-ac9c-02a8bfca543f" name="Duration max" aggregationType="MAX">
+                    <dataColumn name="AIR_TIME"/>
+                </measure>
+                <measure uuid="1509cab4-3daa-4fcd-bec8-5070aeda9e72" name="Elapsed Time Average" aggregationType="AVG_LEAVES">
+                    <dataColumn name="ELAPSED_TIME"/>
+                </measure>
+                <measure uuid="5bd1f3a1-2846-43b7-aeb3-29723e408fc6" name="Row Count" aggregationType="COUNT">
+                    <dataColumn name="DATE"/>
+                </measure>
+                <measure uuid="f47a845b-5c55-4378-aa5b-4bf1e7673b30" name="Arrival Flight Count" aggregationType="COUNT">
+                    <dataColumn name="FLIGHT_NUMBER"/>
+                </measure>
+                <measure uuid="c9e5a82e-4c67-421e-a68e-415f57c0bd74" name="Distance sum" aggregationType="SUM">
+                    <dataColumn name="DISTANCE"/>
+                </measure>
+                <links dimensionId="7e08bd00-42f4-4ecc-b158-5c6483c91906">
+                    <viewLinks type="LAST_LEVEL">
+                        <toColumns name="AIRLINE"/>
+                    </viewLinks>
+                </links>
+                <links dimensionId="ea825b07-38c2-4176-b620-b9eb3ff319ea">
+                    <viewLinks type="LAST_LEVEL">
+                        <toColumns name="DATE"/>
+                    </viewLinks>
+                </links>
+                <links dimensionId="cd428f13-0c2d-445f-a4d9-78d9e2dd55f2">
+                    <viewLinks type="LAST_LEVEL">
+                        <toColumns name="DESTINATION_AIRPORT"/>
+                    </viewLinks>
+                </links>
+            </defaultFacts>
+        </cube>
+        <script>
+            <content>-- 
+-- Drop all calc. members, sets and functions declared at schema/cube levels. 
+-- 
+
+DROP *
+
+</content>
+        </script>
+    </schemaDefinition>
+</schemaFactory>
